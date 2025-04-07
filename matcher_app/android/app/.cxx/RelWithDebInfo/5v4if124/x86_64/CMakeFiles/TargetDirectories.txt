@@ -1,0 +1,2 @@
+/home/aube/Desktop/Matcher/subtil_app/android/app/.cxx/RelWithDebInfo/5v4if124/x86_64/CMakeFiles/edit_cache.dir
+/home/aube/Desktop/Matcher/subtil_app/android/app/.cxx/RelWithDebInfo/5v4if124/x86_64/CMakeFiles/rebuild_cache.dir

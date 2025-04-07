@@ -1,0 +1,234 @@
+{
+    "helloWorld": "Salut Monde!",
+    "@helloWorld": {
+        "description": "Classico"
+    },
+
+    "errorOccured": "Une erreur est survenue :(",
+
+    "delete": "Supprimer",
+    "confirm": "Confirmer",
+
+    "addHobby": "Ajouter +",
+
+    "selectImage": "Selectionner une image",
+    "gallery": "Gallerie",
+    "takePicture": "Prendre une photo",
+    
+    "freeDailyLike": "free",
+    "dailyLikes": "Likes journaliers",
+
+    "claim": "obtenir",
+
+    "newLabel": "New",
+    "match": "Match",
+    "matches": "Matches",
+    "matchUnavailblePopupTitle": "Allo ?..",
+    "matchUnavailablePopupContent": "Ce match n'est plus disponible !",
+    "deleteThisMatch": "Supprimer ce match",
+
+    "imageUnavailable": "Image indisponible",
+    "nameUnavailable": "Nom indisponible",
+    "tapToClose": "Cliquez pour fermer",
+
+    "deleteThisLike": "Supprimer ce like",
+    "confirmAction": "Voulez-vous vraiment faire ça ?",
+    "note": "Note",
+    "years": "ans",
+
+    "pleaseReconnect": "Veuillez vous reconnecter",
+
+    "likeReception": "Réception d'un like",
+    "likeReceptionDesc": "Notification lorsque vous recevez un like.",
+
+    "likeReceptionNotif": "Nouveau like {userName}",
+    "@likeReceptionNotif": {
+        "description": "Contenu de la notification lors de la réception d'un like",
+        "placeholders": {
+            "userName": {
+                "type": "String",
+                "example": "Bob"
+            }
+        }
+    },
+
+    "matchReception": "Alerte d'un nouveau match",
+    "matchReceptionDesc": "Notification lorsque vous avez un nouveau match.",
+
+    "matchReceptionNotif": "Nouveau match avec {userName} !",
+    "@matchReceptionNotif": {
+        "description": "contenu de la notification lorsque l'utilisateur match",
+        "placeholders": {
+            "userName": {
+                "type": "String",
+                "example": "Bob"
+            }
+        }
+    },
+
+    "messageReception": "Réception d'un message",
+    "messageReceptionDesc": "Notification lorsque vous recevez un message.",
+
+    "messageReceptionNotif": "Nouveau message {userName} !",
+    "@messageReceptionNotif": {
+        "description": "Contenu de la notification lors d'un nouveau message",
+        "placeholders": {
+            "userName": {
+                "type": "String",
+                "example": "Bob"
+            }
+        }
+    },
+
+    "dailyLikesNotif": "Réinitialisation des likes journaliers",
+    "dailyLikesNotifDesc": "Notification lorsque les likes journaliers sont disponibles.",
+    
+    "dailyLikesNotifTitle": "❤️ C'est l'heure !",
+    "dailyLikeNotifContent": "Les likes journaliers sont de nouveau disponibles !",
+
+    "customNotif": "Notifications customisées",
+    "customNotifDesc": "Notifications en tout genre de notre équipe",
+    
+    "notEnoughLikes": "Vous êtes à court de likes, revenez demain !",
+    "oops": "Oups...",
+    "okay": "D'accord",
+
+    "clickToView": "Cliquez pour consulter",
+
+    "changeEmail": "Modifier l'adresse email",
+    "emailAddress": "Adresse email",
+    "changeMyEmail": "Modifier mon email",
+    "pleaseEnterValidEmail": "Veuillez entrer une adresse email valide !",
+
+    "validateAccountWithEmail": "Validez votre compte en cliquant sur le lien reçu dans votre boîte mail",
+
+    "verifEmailSent": "Un email de vérification a été envoyé à {email}",
+    "@verifEmailSent": {
+        "description": "Message lorsqu'un email de changement d'email a bien été envoyé",
+        "placeholders": {
+            "email": {
+                "type": "String",
+                "example": "email@email.com"
+            }
+        }
+    },
+
+    "emailUnvailable": "Cette adresse email n'est pas disponible !",
+    "pleaseConfirmEmail": "Veuillez confirmer votre adresse email",
+    "sucessConfirmEmail": "Adresse email confirmée !",
+
+    "passwordResetEmailSent": "Un lien de réinitialisation vous a été envoyé par email !",
+    "resetPassword": "Réinitialiser le mot de passe",
+    "resetMyPassword": "Réinitialiser mon mot de passe",
+    "password": "Mot de passe",
+    "passwordRequirement": "10 caractères, dont : 1 Majuscule, 1 Minuscule\n1 Chiffre, 1 @\\$!%*?&.€",
+    "passwordForgot": "J'ai oublié mon mot de passe",
+
+    "receivedLikes": "Likes reçus",
+    "emptyLikesReception": "Vous n'avez pas encore reçu de like",
+
+    "emptyMatchesReception": "Vous n'avez pas de matchs pour l'instant",
+
+    "takeFirstStep": "Faites le premier pas",
+
+    "wrongCredentials": "Mauvais identifiants !",
+
+    "loadMoreMessages": "Charger plus de messages",
+    "typeAMessage": "Entrez un message...",
+
+    "imageEdited": "Image modifiée",
+    "imageTooBig": "L'image est trop volumineuse ! Maximum 20 Mo",
+
+    "editSuccess": "Modification effectuée !",
+
+    "edit": "modifier",
+
+    "addANote": "Ajoutez une note",
+
+    "location": "Localisation",
+
+    "gender": "Genre",
+    "filters": "Filtres",
+    "ageSearch": "Ages",
+    "attractions": "Attirances",
+    "relationship": "Relation",
+    "weeks": "Semaines",
+    "account": "Compte",
+
+    "profilePaused": "Profil en pause",
+    "profileNowPaused": "Votre profil est maintenant en pause !",
+    "profileNowVisible": "Votre profil est de nouveau visible !",
+
+    "logoutPopupTitle": "revenez vite !",
+    "logoutPopupContent": "Voulez-vous vous déconnecter ?",
+    "logout": "Déconnexion",
+
+    "accountDeletePopupTitle": "Vous nous quittez ?",
+    "accountDeletePopupContent": "Votre compte sera automatiquement supprimé au bout de 30 jours",
+    "accountDeleteReloginToCancel": "Reconnectez-vous pour récupérer votre compte",
+    "deleteMyAccount": "Supprimer mon compte",
+
+    "legalNotice": "Mentions Légales",
+    "tos": "CGU",
+    "termsOfService": "Conditions Générales d'Utilisation",
+
+    "yourLoginInfo": "Tes informations de connexion",
+
+    "whatsYourName": "Comment t'appelles-tu ?",
+    "firstName": "Prénom",
+    "whenWereBorn": "Quand es-tu ne(e) ?",
+
+    "agreeWith": "Accepter les",
+    "finalize": "Finaliser",
+
+    "passwordSuccessUpdated": "Mot de passe mis à jour ! Vous pouvez vous reconnecter",
+    "delayExceededPleaseRestart": "Le délai a été dépassé ! Veuillez recommencer",
+    "passwordDoesntRequirements": "Le mot de passe ne respecte pas les consignes !",
+
+    "newPassword": "Nouveau mot de passe",
+    "reEnterPassword": "Réentrez le mot de passe",
+    "invalidPassword": "Mot de passe invalide !",
+    "passwordsDoesntMatch": "Les mots de passe ne correspondent pas !",
+
+    "searchNewProfiles": "Recherche de nouveaux profils en cours...",
+
+    "niceTry": "Bien essayé !",
+
+    "pageNotFound": "Page introuvable",
+
+    "anAgePreference": "Une preference d'age ?",
+
+    "validate": "Valider",
+
+    "andYourAttractions": "Et tes attirances",
+    "whatsYourAttractions": "Quelles sont tes attirances",
+    "noGenderAvailable": "Aucun genre disponible",
+    "whatsYourGender": "Quel est ton genre ?",
+
+    "thingYouLike_1": "Un truc que tu aimes",
+    "thingYouLike_2": "Un autre truc que tu aimes",
+    "thingYouLike_3": "Encore un petit dernier",
+
+    "pictures": "photos",
+    "addPicture": "Ajouter une image",
+
+    "whereAreYou": "Ou te situes-tu ?",
+    "yourSearchDistance": "Ta distance de recherche ?",
+
+    "birthDate": "Date de naissance",
+
+    "newNote": "Nouvelle note",
+
+    "andOtherwise": "Et sinon",
+    "whyAreYouHere": "pourquoi es-tu ici ?",
+    "relationshipSearched": "Relation recherchee ?",
+    "noRelationshipAvailable": "Aucune relation disponible",
+
+    "apiUnavailable": "Une maintenance est en cours, désolé pour le désagrément",
+
+    "emailInvalid": "Adresse email invalide",
+    "passwordInvalid": "Mot de passe invalide",
+    "firstNameInvalid": "Prénom invalide",
+
+    "unableToGetLocation": "Impossible d'obtenir la localisation"
+}

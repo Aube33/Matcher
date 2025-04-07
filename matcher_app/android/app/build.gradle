@@ -1,0 +1,197 @@
+import java.nio.file.Paths
+
+plugins {
+    id "com.android.application"
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.1'
+}
+
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
+android {
+    namespace "fr.aube33.matcher"
+    compileSdk flutter.compileSdkVersion
+    ndkVersion flutter.ndkVersion
+
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId "fr.aube33.matcher"
+        // You can update the following values to match your application needs.
+        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
+        minSdk flutter.minSdkVersion
+        targetSdk flutter.targetSdkVersion
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    signingConfigs {
+       release {
+           keyAlias keystoreProperties['keyAlias']
+           keyPassword keystoreProperties['keyPassword']
+           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+           storePassword keystoreProperties['storePassword']
+       }
+    }
+
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.release
+            ndk {
+                debugSymbolLevel 'SYMBOL_TABLE'
+            }
+            minifyEnabled false
+            shrinkResources false
+        }
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.2.2'
+    implementation 'androidx.window:window:1.0.0'
+    implementation 'androidx.window:window-java:1.0.0'
+
+    implementation("com.google.android.material:material:1.12.0")
+
+    def multidex_version = "2.0.1"
+    implementation "androidx.multidex:multidex:$multidex_version"
+}
+
+
+def zipNativeDebugSymbols = tasks.register('zipNativeDebugSymbols', Zip) {
+
+    // Optional: this sets some info about the task (to verify, run `./gradlew app:tasks` in the /android folder to see this task listed)
+    group = 'Build'
+    description = 'Zips debug symbol files for upload to Google Play store.'
+
+    // Set the input source directory (this is where the debug symbol files should be after the `bundleRelease` process has finished)
+    def libDir = file('../../build/app/intermediates/merged_native_libs/release/out/lib')
+    from libDir
+
+    // Include all subfiles and directories
+    include '**/*'
+
+    // Set the name for the output zip file
+    archiveFileName = 'native-debug-symbols.zip'
+
+    // Set the destination directory for the output zip file
+    def destDir = file('../../build/app/outputs/bundle/release')
+    destinationDirectory = destDir
+
+    doFirst {
+        // Ensure the paths are correct for the required directories and that they indeed were created / exist (the preceding task `bundleRelease` creates these directories)
+        checkDirectoryExists(libDir, 'Library directory')
+        checkDirectoryExists(destDir, 'Destination directory')
+    }
+
+    doLast {
+        println '✅  zipNativeDebugSymbols: created native-debug-symbols.zip file'
+        // Optional: if running on macOS, clean up unwanted files like '__MACOSX' and '.DS_Store' in the now created zip file
+        // The '__MACOSX' and '.DS_Store' files seem to be added only when manually creating ZIPs on macOS, not programmatically like here. Nevertheless, no harm in leaving this in as a precaution.
+        if (System.properties['os.name'].toLowerCase().contains('mac')) {
+            println '   running on Mac...'
+
+            // Combine destination path and zip file name
+            def zipPath = Paths.get(destinationDirectory.get().asFile.path, archiveFileName.get()).toString()
+
+            // Ensure the zip file exists
+            if (new File(zipPath).exists()) {
+                println "   removing any '__MACOSX' and '.DS_Store' files from the zip..."
+                checkAndRemoveUnwantedFiles(zipPath, '__MACOSX*')
+                checkAndRemoveUnwantedFiles(zipPath, '*.DS_Store')
+            } else {
+                println '❌  zip file does not exist: $zipPath'
+            }
+        }
+        println '✅  zipNativeDebugSymbols: finished creating & cleaning native-debug-symbols.zip'
+    }
+
+    // Optional: force the task to run even if considered up-to-date
+    outputs.upToDateWhen { false }
+
+    println '✅  zipNativeDebugSymbols: task registered and configured'
+}
+
+// STEP 2: Configure the `zipNativeDebugSymbols` task to run after `bundleRelease`
+tasks.whenTaskAdded { task ->
+    if (task.name == 'bundleRelease') {
+        // `finalizedBy` ensures `zipNativeDebugSymbols` runs after `bundleRelease` is complete
+        task.finalizedBy zipNativeDebugSymbols
+    }
+}
+
+//// ----------- HELPER METHODS -------------- ////
+
+// Helper method to check if a directory exists
+def checkDirectoryExists(File dir, String description) {
+    if (dir.exists()) {
+        println '✅  zipNativeDebugSymbols: found ${description} ${dir}'
+    } else {
+        println '❌  ${description} does not exist: ${dir}'
+    }
+}
+
+// Helper method to check for unwanted files and remove them
+def checkAndRemoveUnwantedFiles(String zipPath, String pattern) {
+    def output = new ByteArrayOutputStream()
+
+    exec {
+        commandLine 'sh', '-c', "zipinfo $zipPath | grep '$pattern'"
+        standardOutput = output
+        errorOutput = new ByteArrayOutputStream()
+        ignoreExitValue = true
+    }
+
+    if (output.toString().trim()) {
+        println "✅  zipNativeDebugSymbols: found '$pattern' in the zip. Removing it..."
+        exec {
+            commandLine 'sh', '-c', "zip -d $zipPath '$pattern' || true"
+        }
+    }
+}

@@ -1,0 +1,49 @@
+services:
+  postgres:
+    image: postgis/postgis
+    container_name: matcher-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: matcher_db
+    volumes:
+      - ./matcher_postgres_data:/var/lib/postgresql/data
+    networks:
+      - matcher_network
+
+  hosting:
+    image: matcher-hosting-docker:${HOSTING_IMAGE_VERSION:-latest}
+    build:
+      context: ./matcher_hosting
+      dockerfile: Dockerfile
+    container_name: matcher-hosting
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    volumes:
+      - ./matcher_hosting_data:/app/uploads
+    networks:
+      - matcher_network
+
+  api:
+    image: matcher-api-docker:${API_IMAGE_VERSION:-latest}
+    build:
+      context: ./matcher_api
+      dockerfile: Dockerfile
+    container_name: matcher-api
+    restart: unless-stopped
+    env_file:
+      - .env_api
+    environment:
+      TZ: Europe/Paris
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    networks:
+      - matcher_network
+
+networks:
+  matcher_network:
+    driver: bridge
+

@@ -1,0 +1,18 @@
+{
+  "name": "matcher_hosting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Aube",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.33.2",
+    "winston": "^3.17.0"
+  }
+}

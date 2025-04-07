@@ -1,0 +1,229 @@
+{
+    "helloWorld": "Hello World!",
+    "@helloWorld": {
+        "description": "The conventional newborn programmer greeting"
+    },
+
+    "errorOccured": "An error occured :(",
+
+    "delete": "Delete",
+    "confirm": "Confirm",
+
+    "addHobby": "Add +",
+
+    "selectImage": "Select an image",
+    "gallery": "Gallery",
+    "takePicture": "Take a picture",
+
+    "freeDailyLike": "free",
+    "dailyLikes": "Daily likes",
+    
+    "claim": "claim",
+
+    "newLabel": "New",
+    "match": "Match",
+    "matches": "Matches",
+    "matchUnavailblePopupTitle": "Hello ?..",
+    "matchUnavailablePopupContent": "This match is no longer available !",
+    "deleteThisMatch": "Delete this match",
+
+    "imageUnavailable": "Image unavailable",
+    "nameUnavailable": "Name unavailable",
+    "tapToClose": "Tap to close",
+
+    "deleteThisLike": "Delete this like",
+    "confirmAction": "Do you really want to do this?",
+    "note": "Note",
+    "years": "years old",
+
+    "pleaseReconnect": "Please log in again",
+
+    "likeReception": "Received a like",
+    "likeReceptionDesc": "Notification when you receive a like.",
+
+    "likeReceptionNotif": "You received a like {userName}",
+    "@likeReceptionNotif": {
+        "description": "Notif content when user receive like from another",
+        "placeholders": {
+            "userName": {
+                "type": "String",
+                "example": "Bob"
+            }
+        }
+    },
+
+    "matchReception": "New match",
+    "matchReceptionDesc": "Notification when you match with another user.",
+
+    "matchReceptionNotif": "You matched with {userName} !",
+    "@matchReceptionNotif": {
+        "description": "Notif content when user match",
+        "placeholders": {
+            "userName": {
+                "type": "String",
+                "example": "Bob"
+            }
+        }
+    },
+
+    "messageReception": "Received new message",
+    "messageReceptionDesc": "Notification when received new message.",
+
+    "messageReceptionNotif": "New message {userName} !",
+    "@messageReceptionNotif": {
+        "description": "Notif content when user match",
+        "placeholders": {
+            "userName": {
+                "type": "String",
+                "example": "Bob"
+            }
+        }
+    },
+
+    "dailyLikesNotif": "Reset of daily likes",
+    "dailyLikesNotifDesc": "Notification when daily likes are available.",
+
+    "dailyLikesNotifTitle": "❤️ It's time !",
+    "dailyLikeNotifContent": "Daily likes are now available !",
+
+    "customNotif": "Custom notifications",
+    "customNotifDesc": "General custom notifications from our team",
+
+    "notEnoughLikes": "You're out of likes, come back tomorrow !",
+    "oops": "Oops...",
+    "okay": "Okay",
+
+    "clickToView": "Click to view",
+
+    "changeEmail": "Change email",
+    "emailAddress": "Email address",
+    "changeMyEmail": "Change my email",
+    "pleaseEnterValidEmail": "Please enter a valid email address !",
+
+    "validateAccountWithEmail": "Validate your account by clicking on the link received in your email inbox",
+
+    "verifEmailSent": "A verification email has been sent to {email}",
+    "@verifEmailSent": {
+        "description": "Message to confirm email reset successfully sent",
+        "placeholders": {
+            "email": {
+                "type": "String",
+                "example": "email@email.com"
+            }
+        }
+    },
+
+    "emailUnvailable": "This email address is not available !",
+    "pleaseConfirmEmail": "Please confirm your email address first !",
+    "sucessConfirmEmail": "Email address confirmed!",
+    
+    "passwordResetEmailSent": "A reset link has been sent to your email !",
+    "resetPassword": "Reset password",
+    "resetMyPassword": "Reset my password",
+    "password": "Password",
+    "passwordRequirement": "10 characters, with : 1 Uppercase, 1 Lowercase\n1 Number, and 1 @\\$!%*?&.€",
+    "passwordForgot": "I forgot my password",
+
+    "receivedLikes": "Received likes",
+    "emptyLikesReception": "You haven't received any likes yet",
+
+    "emptyMatchesReception": "You don't have any matches yet.",
+
+    "takeFirstStep": "Take the first step",
+
+    "wrongCredentials": "Wrong credentials !",
+
+    "loadMoreMessages": "Load more messages",
+    "typeAMessage": "Type a message...",
+
+    "imageEdited": "Image edited",
+    "imageTooBig": "The image is too large! Maximum 20 MB",
+
+    "editSuccess": "Edit successful !",
+
+    "edit": "edit",
+
+    "addANote": "Add a note",
+
+    "location": "Location",
+    "gender": "Gender",
+    "filters": "Filters",
+    "ageSearch": "Age search",
+    "attractions": "Attractions",
+    "relationship": "Relationship",
+    "weeks": "Weeks",
+    "account": "Account",
+
+    "profilePaused": "Profile paused",
+    "profileNowPaused" : "Your profile is now paused !",
+    "profileNowVisible" : "Your profile is now visible !",
+
+    "logoutPopupTitle" : "Come back soon!",
+    "logoutPopupContent" : "Do you want to log out?",
+    "logout": "Log out",
+
+    "accountDeletePopupTitle" : "Leaving us ?",
+    "accountDeletePopupContent" : "Your account will be automatically deleted after 30 days",
+    "accountDeleteReloginToCancel" : "Log in again to recover your account",
+    "deleteMyAccount": "Delete my account",
+
+    "legalNotice": "Legal Notice",
+    "tos": "ToS",
+    "termsOfService": "Terms of Service",
+
+    "yourLoginInfo": "Your login information",
+
+    "whatsYourName": "What's your name ?",
+    "firstName": "First name",
+    "whenWereBorn": "When were you born ?",
+
+    "agreeWith": "Agree with",
+    "finalize": "Finalize",
+
+    "passwordSuccessUpdated": "Password updated ! You can log in again",
+    "delayExceededPleaseRestart": "The time limit has been exceeded ! Please try again",
+    "passwordDoesntRequirements": "The password doesn't meet the requirements!",
+
+    "newPassword": "New password",
+    "reEnterPassword": "Re-enter the password",
+    "invalidPassword" : "Invalid password !",
+    "passwordsDoesntMatch" : "Passwords do not match !",
+
+    "searchNewProfiles": "Searching for new profiles...",
+
+    "niceTry": "Nice try !",
+
+    "pageNotFound": "Page not found",
+
+    "anAgePreference": "An age preference ?",
+
+    "validate": "Validate",
+
+    "andYourAttractions": "And your attractions",
+    "whatsYourAttractions": "What are your attractions ?",
+    "noGenderAvailable": "No gender available",
+    "whatsYourGender": "What is your gender ?",
+
+    "pictures": "pictures",
+    "addPicture": "Add a picture",
+
+    "whereAreYou": "Where are you located ?",
+    "yourSearchDistance": "Your search distance ?",
+
+    "birthDate": "Date of birth",
+
+    "newNote": "New note",
+
+    "andOtherwise": "And otherwise",
+    "whyAreYouHere": "Why are you here ?",
+    "relationshipSearched": "What kind of relationship are you looking for ?",
+    "noRelationshipAvailable": "No relationship available",
+
+    "apiUnavailable": "Maintenance in progress, sorry for the inconvenience",
+
+    "emailInvalid": "Invalid email",
+    "passwordInvalid": "Invalid password",
+    "firstNameInvalid": "Invalid first name",
+
+    "unableToGetLocation": "Unable to get location"
+}
