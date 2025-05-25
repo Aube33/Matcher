@@ -56,4 +56,4 @@ Run `matcher_app` on Android Virtual Device (AVD)
 
 
 ## <u>Demo</u>:
-<iframe width="853" height="480" src="https://www.youtube.com/embed/m9TuktSo_xY" title="Demo matcher" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![Youtube Matcher Demo](http://img.youtube.com/vi/m9TuktSo_xY/0.jpg)](http://www.youtube.com/watch?v=m9TuktSo_xY "Matcher Demo")
